@@ -3,12 +3,13 @@
  const faker = require('faker')
 
  describe('Create Project', () => {
-    it('successfully', () => {
+    it.only('successfully', () => {
         const project = {
             name: `project-${faker.random.uuid()}`,
             description: faker.random.words(5)
         }
-
+        console.log(project)
+        
         cy.api_createProject(project)
        
         .then(response => {
